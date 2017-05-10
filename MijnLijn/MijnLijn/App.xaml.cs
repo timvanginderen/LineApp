@@ -13,7 +13,7 @@ namespace MijnLijn
         {
             InitializeComponent();
 
-            MainPage = new MijnLijn.MainPage();
+            MainPage = new NavigationPage(new MijnLijn.MainPage());
         }
 
         protected override void OnStart()

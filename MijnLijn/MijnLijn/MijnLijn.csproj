@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="staticHaltes.sqlite" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

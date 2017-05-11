@@ -1,9 +1,6 @@
 ﻿using MijnLijn.Models;
 using SQLite;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MijnLijn
@@ -26,6 +23,17 @@ namespace MijnLijn
         public Task<List<ToDoItem>> GetItemsNotDoneAsync()
         {
             return database.QueryAsync<ToDoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+        }
+
+        public Task<List<HalteLookup>> GetHalteLookupsAsync()
+        {
+            return database.QueryAsync<HalteLookup>("SELECT * FROM [ZHALTELOOKUP]");
+        }
+
+        public Task<ZHALTELOOKUP> GetHalteLookupAsync(int id)
+        {
+            //return database.Table<HalteLookup>().Where(i => i.Z_PK == id).FirstOrDefaultAsync();
+            return database.GetAsync<ZHALTELOOKUP>("SELECT * FROM [ZHALTELOOKUP] LIMIT 1");
         }
 
         public Task<ToDoItem> GetItemAsync(int id)

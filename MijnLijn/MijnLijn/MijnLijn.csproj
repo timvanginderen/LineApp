@@ -51,7 +51,10 @@
     <Compile Include="AllBusStopsTab.xaml.cs">
       <DependentUpon>AllBusStopsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Halte.cs" />
+    <Compile Include="Models\HalteLookup.cs" />
     <Compile Include="Models\ToDoItem.cs" />
+    <Compile Include="Models\ZHALTELOOKUP.cs" />
     <Compile Include="NearbyTab.xaml.cs">
       <DependentUpon>NearbyTab.xaml</DependentUpon>
     </Compile>

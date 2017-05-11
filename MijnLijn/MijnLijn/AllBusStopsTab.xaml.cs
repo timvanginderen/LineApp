@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MijnLijn.Models;
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MijnLijn.Models;
 
 namespace MijnLijn
 {
@@ -40,8 +35,10 @@ namespace MijnLijn
 
         async void OnShowClicked(object sender, EventArgs e)
         {
-            ToDoItem item = await App.Database.GetItemAsync(1);
-            await DisplayAlert("Title", item.Name, "Cancel");
+            //ToDoItem item = await App.Database.GetItemAsync(1);
+            ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
+            await DisplayAlert("Title", halte.ZNAME, "Cancel");
+
         }
     }
 }

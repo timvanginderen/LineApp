@@ -37,5 +37,11 @@ namespace MijnLijn
             await App.Database.SaveItemAsync(todoItem);
             //await Navigation.PopAsync();
         }
+
+        async void OnShowClicked(object sender, EventArgs e)
+        {
+            ToDoItem item = await App.Database.GetItemAsync(1);
+            await DisplayAlert("Title", item.Name, "Cancel");
+        }
     }
 }

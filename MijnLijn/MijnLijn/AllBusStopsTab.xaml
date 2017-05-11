@@ -9,5 +9,6 @@
 			  ItemsSource="{Binding .}" />
 
     <Button Text="Save" Clicked="OnSaveClicked" />
+    <Button Text="Show" Clicked="OnShowClicked" />
 
 </ContentPage>

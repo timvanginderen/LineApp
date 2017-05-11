@@ -33,23 +33,5 @@ namespace MijnLijn
 
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
-
-        async void OnSaveClicked(object sender, EventArgs e)
-        {
-            var todoItem = new ToDoItem();
-            todoItem.Name = "TestName";
-            await App.Database.SaveItemAsync(todoItem);
-            //await Navigation.PopAsync();
-        }
-
-        async void OnShowClicked(object sender, EventArgs e)
-        {
-            //ToDoItem item = await App.Database.GetItemAsync(1);
-            //ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
-            
-            //await DisplayAlert("Title", halte.ZNAME, "Cancel");
-            await DisplayAlert("Title", "einde", "Cancel");
-
-        }
     }
 }

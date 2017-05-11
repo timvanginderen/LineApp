@@ -4,36 +4,19 @@
              x:Class="MijnLijn.AllBusStopsTab"
              Title="All stops">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="80"/>
-        </Grid.RowDefinitions>
-
-        <ListView x:Name="listView" 
+    <ListView x:Name="listView" 
 			  ItemTapped="OnItemTapped"
 			  ItemsSource="{Binding .}" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout >
-                            <Label Text="{Binding ZNAME}" Font="15,Bold" />
-                            <Label Text="{Binding Numbers}"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Button Text="Save" Clicked="OnSaveClicked"  />
-            <Button Grid.Column="1" Text="Show" Clicked="OnShowClicked" />
-        </Grid>
-    </Grid>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout >
+                        <Label Text="{Binding ZNAME}" Font="15,Bold" />
+                        <Label Text="{Binding Numbers}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>

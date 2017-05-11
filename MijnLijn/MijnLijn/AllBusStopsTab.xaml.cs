@@ -1,5 +1,6 @@
 ﻿using MijnLijn.Models;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,8 +37,11 @@ namespace MijnLijn
         async void OnShowClicked(object sender, EventArgs e)
         {
             //ToDoItem item = await App.Database.GetItemAsync(1);
-            ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
-            await DisplayAlert("Title", halte.ZNAME, "Cancel");
+            //ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
+            List<ZHALTELOOKUP> haltes = await App.Database.GetHalteLookupsAsync();
+
+            //await DisplayAlert("Title", halte.ZNAME, "Cancel");
+            await DisplayAlert("Title", "einde", "Cancel");
 
         }
     }

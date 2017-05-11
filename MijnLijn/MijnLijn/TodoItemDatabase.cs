@@ -25,9 +25,9 @@ namespace MijnLijn
             return database.QueryAsync<ToDoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
-        public Task<List<HalteLookup>> GetHalteLookupsAsync()
+        public Task<List<ZHALTELOOKUP>> GetHalteLookupsAsync()
         {
-            return database.QueryAsync<HalteLookup>("SELECT * FROM [ZHALTELOOKUP]");
+            return database.QueryAsync<ZHALTELOOKUP>("SELECT * FROM [ZHALTELOOKUP]");
         }
 
         public Task<ZHALTELOOKUP> GetHalteLookupAsync(int id)

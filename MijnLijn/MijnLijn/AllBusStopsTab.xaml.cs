@@ -39,7 +39,7 @@ namespace MijnLijn
             //ToDoItem item = await App.Database.GetItemAsync(1);
             //ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
             List<ZHALTELOOKUP> haltes = await App.Database.GetHalteLookupsAsync();
-
+            this.BindingContext = haltes;
             //await DisplayAlert("Title", halte.ZNAME, "Cancel");
             await DisplayAlert("Title", "einde", "Cancel");
 

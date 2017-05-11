@@ -12,7 +12,13 @@
 
         <ListView x:Name="listView" 
 			  ItemTapped="OnItemTapped"
-			  ItemsSource="{Binding .}" />
+			  ItemsSource="{Binding .}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ZNAME}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

@@ -25,8 +25,6 @@ namespace MijnLijn
 
         void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            
-
             if (e == null) return; // has been set to null, do not 'process' tapped event
 
             ZHALTELOOKUP lookup = (ZHALTELOOKUP) e.Item;

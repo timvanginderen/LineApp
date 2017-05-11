@@ -15,7 +15,12 @@
 			  ItemsSource="{Binding .}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding ZNAME}" />
+                    <ViewCell>
+                        <StackLayout >
+                            <Label Text="{Binding ZNAME}" Font="15,Bold" />
+                            <Label Text="{Binding Numbers}"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

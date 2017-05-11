@@ -12,9 +12,8 @@ namespace MijnLijn
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new NavigationPage(new MijnLijn.MainPage());
-            MainPage = new MainPageTabbed();
+            
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

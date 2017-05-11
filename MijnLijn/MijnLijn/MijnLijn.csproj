@@ -38,28 +38,28 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GreetingPage.xaml.cs">
+      <DependentUpon>GreetingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageTabbed.xaml.cs">
-      <DependentUpon>MainPageTabbed.xaml</DependentUpon>
+    <Compile Include="FavoritesTab.xaml.cs">
+      <DependentUpon>FavoritesTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageTabbedTab1.xaml.cs">
-      <DependentUpon>MainPageTabbedTab1.xaml</DependentUpon>
+    <Compile Include="AllBusStopsTab.xaml.cs">
+      <DependentUpon>AllBusStopsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageTabbedTab2.xaml.cs">
-      <DependentUpon>MainPageTabbedTab2.xaml</DependentUpon>
+    <Compile Include="NearbyTab.xaml.cs">
+      <DependentUpon>NearbyTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageTabbedTab3.xaml.cs">
-      <DependentUpon>MainPageTabbedTab3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainPageTabbedTab4.xaml.cs">
-      <DependentUpon>MainPageTabbedTab4.xaml</DependentUpon>
+    <Compile Include="MapTab.xaml.cs">
+      <DependentUpon>MapTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
+    <EmbeddedResource Include="GreetingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -83,31 +83,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageTabbed.xaml">
+    <EmbeddedResource Include="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageTabbedTab1.xaml">
+    <EmbeddedResource Include="FavoritesTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageTabbedTab2.xaml">
+    <EmbeddedResource Include="AllBusStopsTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageTabbedTab3.xaml">
+    <EmbeddedResource Include="NearbyTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageTabbedTab4.xaml">
+    <EmbeddedResource Include="MapTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

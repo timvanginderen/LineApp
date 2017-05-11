@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace MijnLijn
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageTabbedTab3 : ContentPage
+    public partial class AllBusStopsTab : ContentPage
     {
-        public MainPageTabbedTab3()
+        public AllBusStopsTab()
         {
             InitializeComponent();
         }

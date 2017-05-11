@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MijnLijn.Models;
 
 namespace MijnLijn
 {
@@ -27,6 +28,14 @@ namespace MijnLijn
             if (e == null) return; // has been set to null, do not 'process' tapped event
             Debug.WriteLine("Tapped: " + e.Item);
             ((ListView)sender).SelectedItem = null; // de-select the row
+        }
+
+        async void OnSaveClicked(object sender, EventArgs e)
+        {
+            var todoItem = new ToDoItem();
+            todoItem.Name = "TestName";
+            await App.Database.SaveItemAsync(todoItem);
+            //await Navigation.PopAsync();
         }
     }
 }

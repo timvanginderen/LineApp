@@ -7,5 +7,7 @@
     <ListView x:Name="listView" 
 			  ItemTapped="OnItemTapped"
 			  ItemsSource="{Binding .}" />
-    
+
+    <Button Text="Save" Clicked="OnSaveClicked" />
+
 </ContentPage>

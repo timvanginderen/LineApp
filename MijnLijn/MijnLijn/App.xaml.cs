@@ -9,11 +9,25 @@ namespace MijnLijn
 {
     public partial class App : Application
     {
+        static TodoItemDatabase database;
+
         public App()
         {
             InitializeComponent();
             
             MainPage = new MainPage();
+        }
+
+        public static TodoItemDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new TodoItemDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("TodoSQLite.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

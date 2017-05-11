@@ -14,15 +14,25 @@ namespace MijnLijn
         {
             InitializeComponent();
 
-            this.BindingContext = new[] { "a", "b", "c" };
+            GetLookups();
+        }
+
+        private async void GetLookups()
+        {
+            List<ZHALTELOOKUP> haltes = await App.Database.GetHalteLookupsAsync();
+            this.BindingContext = haltes;
         }
 
         void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            DisplayAlert("Test", "Clicked", "cancel");
+            
 
             if (e == null) return; // has been set to null, do not 'process' tapped event
-            Debug.WriteLine("Tapped: " + e.Item);
+
+            ZHALTELOOKUP lookup = (ZHALTELOOKUP) e.Item;
+
+            DisplayAlert("Test", lookup.ZNAME, "cancel");
+
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
 
@@ -38,8 +48,7 @@ namespace MijnLijn
         {
             //ToDoItem item = await App.Database.GetItemAsync(1);
             //ZHALTELOOKUP halte = await App.Database.GetHalteLookupAsync(21177);
-            List<ZHALTELOOKUP> haltes = await App.Database.GetHalteLookupsAsync();
-            this.BindingContext = haltes;
+            
             //await DisplayAlert("Title", halte.ZNAME, "Cancel");
             await DisplayAlert("Title", "einde", "Cancel");
 

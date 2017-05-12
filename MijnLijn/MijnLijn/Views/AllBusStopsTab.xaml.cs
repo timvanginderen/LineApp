@@ -1,4 +1,5 @@
 ﻿using MijnLijn.Models;
+using MijnLijn.Views;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -27,7 +28,8 @@ namespace MijnLijn
 
             BusStopLookup lookup = (BusStopLookup) e.Item;
 
-            DisplayAlert("Test", lookup.Name, "cancel");
+            Navigation.PushAsync(new BusStopPage());
+            //DisplayAlert("Test", lookup.Name, "cancel");
 
             ((ListView)sender).SelectedItem = null; // de-select the row
         }

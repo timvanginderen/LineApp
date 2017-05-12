@@ -23,7 +23,7 @@ namespace MijnLijn
             {
                 if (database == null)
                 {
-                    database = new MijnLijnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("MijnLijn.db3"));
+                    //database = new MijnLijnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("MijnLijn.db3"));
                 }
                 return database;
             }

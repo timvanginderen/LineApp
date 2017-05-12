@@ -12,7 +12,7 @@ namespace MijnLijn.Data.Remote
         {
             this.service = service;
         }
-        public Task<List<Line>> GetLines()
+        public Task<ApiResponse> GetLines()
         {
             return service.PostToGetLines();
         }

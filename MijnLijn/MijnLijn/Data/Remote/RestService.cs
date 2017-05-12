@@ -22,9 +22,11 @@ namespace MijnLijn.Data.Remote
             client.DefaultRequestHeaders.Add("x-token", Constants.ApiToken);
         }
 
-        public async Task<List<Line>> PostToGetLines()
+        public async Task<ApiResponse> PostToGetLines()
         {
             var uri = new Uri(string.Format(Constants.ApiUrl));
+            ApiResponse apiResponse = new ApiResponse();
+
             try
             {
                 var keyValues = new List<KeyValuePair<string, string>>();
@@ -38,7 +40,7 @@ namespace MijnLijn.Data.Remote
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
                     Debug.WriteLine(@"				Success, content: " + responseContent.ToString());
-                    Lines = JsonConvert.DeserializeObject<List<Line>>(responseContent);
+                    apiResponse = JsonConvert.DeserializeObject<ApiResponse>(responseContent);
                 }
             }
             catch (Exception ex)
@@ -46,7 +48,7 @@ namespace MijnLijn.Data.Remote
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
 
-            return Lines;
+            return apiResponse;
         }
     }
 }

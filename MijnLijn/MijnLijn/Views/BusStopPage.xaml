@@ -3,4 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MijnLijn.Views.BusStopPage"
              Title="Bus stop">
+
+    <ListView x:Name="listView" 
+			  ItemTapped="OnItemTapped"
+			  ItemsSource="{Binding .}" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout >
+                        <Label Text="{Binding Name}" Font="15,Bold" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
 </ContentPage>

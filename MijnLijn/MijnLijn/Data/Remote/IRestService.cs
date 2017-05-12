@@ -6,7 +6,7 @@ namespace MijnLijn.Data.Remote
 {
     public interface IRestService
     {
-        Task<List<Line>> PostToGetLines();
+        Task<ApiResponse> PostToGetLines();
        
     }
 }

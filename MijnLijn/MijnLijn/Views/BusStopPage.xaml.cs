@@ -21,7 +21,13 @@ namespace MijnLijn.Views
 
         async void GetLines()
         {
-            List<Line> lines = await App.LineManager.GetLines();
+            ApiResponse apiResponse = await App.LineManager.GetLines();
+            this.Title = "Finished....";
+        }
+
+        private void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
         }
     }
 }

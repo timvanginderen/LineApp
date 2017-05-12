@@ -42,10 +42,11 @@
     <Compile Include="Data\Remote\IRestService.cs" />
     <Compile Include="Data\Remote\LineManager.cs" />
     <Compile Include="Data\Remote\RestService.cs" />
+    <Compile Include="Data\Remote\ApiResponse.cs" />
     <Compile Include="Models\BusStop.cs" />
     <Compile Include="Models\BusStopLookup.cs" />
     <Compile Include="Models\Favorite.cs" />
-    <Compile Include="Models\Line.cs" />
+    <Compile Include="Data\Remote\Line.cs" />
     <Compile Include="Views\BusStopPage.xaml.cs">
       <DependentUpon>BusStopPage.xaml</DependentUpon>
     </Compile>

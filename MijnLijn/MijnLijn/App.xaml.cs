@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Xamarin.Forms;
 
 namespace MijnLijn
 {
     public partial class App : Application
     {
-        static TodoItemDatabase database;
+        static MijnLijnDatabase database;
 
         public App()
         {
@@ -18,13 +14,13 @@ namespace MijnLijn
             MainPage = new MainPage();
         }
 
-        public static TodoItemDatabase Database
+        public static MijnLijnDatabase Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new TodoItemDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("TodoSQLite.db3"));
+                    database = new MijnLijnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("MijnLijn.db3"));
                 }
                 return database;
             }

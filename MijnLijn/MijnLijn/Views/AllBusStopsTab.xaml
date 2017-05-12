@@ -11,8 +11,8 @@
             <DataTemplate>
                 <ViewCell>
                     <StackLayout >
-                        <Label Text="{Binding ZNAME}" Font="15,Bold" />
-                        <Label Text="{Binding Numbers}"/>
+                        <Label Text="{Binding Name}" Font="15,Bold" />
+                        <Label Text="{Binding NumbersDisplay}"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

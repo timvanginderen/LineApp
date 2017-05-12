@@ -1,7 +1,5 @@
 ﻿using MijnLijn.Models;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +17,7 @@ namespace MijnLijn
 
         private async void GetLookups()
         {
-            List<ZHALTELOOKUP> haltes = await App.Database.GetHalteLookupsAsync();
+            List<BusStopLookup> haltes = await App.Database.GetHalteLookupsAsync();
             this.BindingContext = haltes;
         }
 
@@ -27,9 +25,9 @@ namespace MijnLijn
         {
             if (e == null) return; // has been set to null, do not 'process' tapped event
 
-            ZHALTELOOKUP lookup = (ZHALTELOOKUP) e.Item;
+            BusStopLookup lookup = (BusStopLookup) e.Item;
 
-            DisplayAlert("Test", lookup.ZNAME, "cancel");
+            DisplayAlert("Test", lookup.Name, "cancel");
 
             ((ListView)sender).SelectedItem = null; // de-select the row
         }

@@ -28,7 +28,7 @@ namespace MijnLijn
 
             BusStopLookup lookup = (BusStopLookup) e.Item;
 
-            Navigation.PushAsync(new BusStopPage());
+            Navigation.PushAsync(new BusStopPage(lookup));
             //DisplayAlert("Test", lookup.Name, "cancel");
 
             ((ListView)sender).SelectedItem = null; // de-select the row

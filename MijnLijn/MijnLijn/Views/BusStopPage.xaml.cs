@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
+using MijnLijn.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,9 +8,11 @@ namespace MijnLijn.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusStopPage : ContentPage
     {
-        public BusStopPage()
+        public BusStopPage(BusStopLookup lookup)
         {
             InitializeComponent();
+
+            this.Title = lookup.Name;
         }
     }
 }

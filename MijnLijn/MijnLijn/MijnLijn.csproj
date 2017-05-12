@@ -38,7 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="Data\Remote\IRestService.cs" />
+    <Compile Include="Data\Remote\LineManager.cs" />
     <Compile Include="Data\Remote\RestService.cs" />
     <Compile Include="Models\BusStop.cs" />
     <Compile Include="Models\BusStopLookup.cs" />

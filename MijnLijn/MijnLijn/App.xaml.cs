@@ -1,16 +1,19 @@
 ﻿
+using MijnLijn.Data.Remote;
 using Xamarin.Forms;
 
 namespace MijnLijn
 {
     public partial class App : Application
     {
-        static MijnLijnDatabase database;
+        private static MijnLijnDatabase database;
+        public static LineManager LineManager { get; private set; }
 
         public App()
         {
             InitializeComponent();
-            
+
+            LineManager = new LineManager(new RestService());
             MainPage = new NavigationPage(new MainPage());
         }
 

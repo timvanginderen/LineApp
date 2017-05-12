@@ -1,5 +1,6 @@
 ﻿
 using MijnLijn.Models;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,6 +14,14 @@ namespace MijnLijn.Views
             InitializeComponent();
 
             this.Title = lookup.Name;
+
+            GetLines();
+            
+        }
+
+        async void GetLines()
+        {
+            List<Line> lines = await App.LineManager.GetLines();
         }
     }
 }

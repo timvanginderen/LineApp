@@ -1,6 +1,5 @@
 ﻿
 using MijnLijn.Models;
-using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,7 +21,13 @@ namespace MijnLijn.Views
         async void GetLines()
         {
             ApiResponse apiResponse = await App.LineManager.GetLines();
-            this.Title = "Finished....";
+
+            this.BindingContext = apiResponse.Data.Lines;
+
+            Line line = apiResponse.Data.Lines[0];
+            string backgroundHex = line.BackgroundColorHex;
+            string textHex = line.TextColorHex;
+            string dest = line.Destination;
         }
 
         private void OnItemTapped(object sender, ItemTappedEventArgs e)

@@ -10,8 +10,9 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout >
-                        <Label Text="{Binding Name}" Font="15,Bold" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding LineNumber}" Font="16,Bold" BackgroundColor="{Binding BackgroundColorHex}" TextColor="{Binding TextColorHex}" VerticalOptions="Center" />
+                        <Label Text="{Binding Destination}" Font="15" VerticalOptions="Center" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

@@ -13,6 +13,7 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="{Binding LineNumber}" Font="16,Bold" BackgroundColor="{Binding BackgroundColorHex}" TextColor="{Binding TextColorHex}" VerticalOptions="Center" />
                         <Label Text="{Binding Destination}" Font="15" VerticalOptions="Center" />
+                        <Label Text="{Binding Arrival}" Font="15" VerticalOptions="Center" HorizontalOptions="End" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

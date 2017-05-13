@@ -30,7 +30,24 @@ namespace MijnLijn.Models
                 return ToHex(myColor);
             }
         }
+        // Get arrival time in pretty format; display in minutes when close
+        // Display in red if delayed (real time exceeds normal time)
+        public string Arrival
+        {
+            get
+            {
+                //Check if arrival time is more than half an hour from now
+                if ((this.RealTimeISO - DateTime.Today).Minutes > 30)
+                {
+                    return RealTimeISO.ToString("HH:mm");
+                }
+                else
+                {
+                    return RealTimeISO.ToString("mm") + "'";
+                }
 
+            }
+        }
         private Xamarin.Forms.Color ToXamarinColor(Color color)
         {
             return Xamarin.Forms.Color.FromRgb(color.Red, color.Green, color.Blue);

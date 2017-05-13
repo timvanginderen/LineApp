@@ -1,5 +1,4 @@
 ﻿using MijnLijn.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MijnLijn.Data.Remote
@@ -12,9 +11,9 @@ namespace MijnLijn.Data.Remote
         {
             this.service = service;
         }
-        public Task<ApiResponse> GetLines()
+        public Task<ApiResponse> GetLines(int[] stopNumbers)
         {
-            return service.PostToGetLines();
+            return service.PostToGetLines(stopNumbers);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using SQLite;
+using System;
+using System.Linq;
 
 namespace MijnLijn.Models
 {
@@ -21,6 +23,16 @@ namespace MijnLijn.Models
                 if (this.Numbers.Length == 0) return "";
                 return string.Join(",", this.Numbers.Split(';'));
             }
+        }
+
+        public int[] NumbersArray
+        {
+            get
+            {
+                if (this.Numbers.Length == 0) return new int[0];
+                return this.Numbers.Split(';').Select(n => Convert.ToInt32(n)).ToArray();
+            }
+
         }
     }
 }

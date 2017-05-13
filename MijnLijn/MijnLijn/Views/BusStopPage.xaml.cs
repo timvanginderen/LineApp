@@ -8,26 +8,32 @@ namespace MijnLijn.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusStopPage : ContentPage
     {
+
         public BusStopPage(BusStopLookup lookup)
         {
             InitializeComponent();
 
+            // Use bus stop name as page title
             this.Title = lookup.Name;
-
-            GetLines();
+            
+            // Fetch lines for stops from server
+            int[] stopNumbers = lookup.NumbersArray;
+            GetLines(stopNumbers);
             
         }
 
-        async void GetLines()
+        async void GetLines(int[] stopNumbers)
         {
-            ApiResponse apiResponse = await App.LineManager.GetLines();
+            ApiResponse apiResponse = await App.LineManager.GetLines(stopNumbers);
 
-            this.BindingContext = apiResponse.Data.Lines;
-
-            Line line = apiResponse.Data.Lines[0];
-            string backgroundHex = line.BackgroundColorHex;
-            string textHex = line.TextColorHex;
-            string dest = line.Destination;
+            if (apiResponse.Success)
+            {
+                this.BindingContext = apiResponse.Data.Lines;
+            }
+            else
+            {
+                DisplayAlert("Info", "Deze halte bestaat niet meer", "Cancel");
+            }
         }
 
         private void OnItemTapped(object sender, ItemTappedEventArgs e)

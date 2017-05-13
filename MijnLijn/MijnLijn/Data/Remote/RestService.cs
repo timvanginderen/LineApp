@@ -22,7 +22,7 @@ namespace MijnLijn.Data.Remote
             client.DefaultRequestHeaders.Add("x-token", Constants.ApiToken);
         }
 
-        public async Task<ApiResponse> PostToGetLines()
+        public async Task<ApiResponse> PostToGetLines(int[] stopNumbers)
         {
             var uri = new Uri(string.Format(Constants.ApiUrl));
             ApiResponse apiResponse = new ApiResponse();
@@ -30,8 +30,9 @@ namespace MijnLijn.Data.Remote
             try
             {
                 var keyValues = new List<KeyValuePair<string, string>>();
-                keyValues.Add(new KeyValuePair<string, string>("stopID", "105689"));
-                keyValues.Add(new KeyValuePair<string, string>("stopID", "105690"));
+                foreach(int stopNumber in stopNumbers) {
+                    keyValues.Add(new KeyValuePair<string, string>("stopID", stopNumber.ToString()));
+                }
                 keyValues.Add(new KeyValuePair<string, string>("os", "android"));
 
                 HttpContent content = new FormUrlEncodedContent(keyValues);

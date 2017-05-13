@@ -30,7 +30,8 @@ namespace MijnLijn.Data.Remote
             try
             {
                 var keyValues = new List<KeyValuePair<string, string>>();
-                keyValues.Add(new KeyValuePair<string, string>("stopID", "105694"));
+                keyValues.Add(new KeyValuePair<string, string>("stopID", "105689"));
+                keyValues.Add(new KeyValuePair<string, string>("stopID", "105690"));
                 keyValues.Add(new KeyValuePair<string, string>("os", "android"));
 
                 HttpContent content = new FormUrlEncodedContent(keyValues);

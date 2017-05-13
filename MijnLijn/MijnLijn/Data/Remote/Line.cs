@@ -45,7 +45,6 @@ namespace MijnLijn.Models
                 {
                     return RealTimeISO.ToString("mm") + "'";
                 }
-
             }
         }
         private Xamarin.Forms.Color ToXamarinColor(Color color)

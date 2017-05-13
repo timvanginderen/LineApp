@@ -18,8 +18,8 @@ namespace MijnLijn
 
         private async void GetLookups()
         {
-            //List<BusStopLookup> haltes = await App.Database.GetHalteLookupsAsync();
-            //this.BindingContext = haltes;
+            List<BusStopLookup> haltes = await App.Database.GetHalteLookupsAsync();
+            this.BindingContext = haltes;
         }
 
         void OnItemTapped(object sender, ItemTappedEventArgs e)

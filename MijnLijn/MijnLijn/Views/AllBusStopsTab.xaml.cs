@@ -24,6 +24,7 @@ namespace MijnLijn
         private async void GetLookups()
         {
             allLookups = await App.Database.GetHalteLookupsAsync();
+            List<BusStop> allStops = await App.Database.GetHaltesByDistanceAsync();
             this.BindingContext = allLookups;
         }
 

@@ -48,5 +48,10 @@ namespace MijnLijn
             }
 
         }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            string smt = e == null ? "" : e.ToString();
+        }
     }
 }

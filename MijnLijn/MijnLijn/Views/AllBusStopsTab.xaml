@@ -14,9 +14,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout >
-                            <Label Text="{Binding Name}" Font="15,Bold" />
-                            <Label Text="{Binding NumbersDisplay}"/>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" Font="15,Bold" />
+                                <Label Text="{Binding NumbersDisplay}"/>
+                            </StackLayout>
+                            <Switch Toggled="Switch_Toggled" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

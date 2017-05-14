@@ -1,5 +1,6 @@
 ﻿using SQLite;
 using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace MijnLijn.Models
@@ -49,6 +50,10 @@ namespace MijnLijn.Models
                     }
                 }
                 return false;
+            }
+            set
+            {
+                Debug.WriteLine("joep");
             }
         }
     }

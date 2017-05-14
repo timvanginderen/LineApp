@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MijnLijn.Widgets;assembly=MijnLijn"
              x:Class="MijnLijn.AllBusStopsTab"
              Title="All stops">
 
@@ -19,7 +20,7 @@
                                 <Label Text="{Binding Name}" Font="15,Bold" />
                                 <Label Text="{Binding NumbersDisplay}"/>
                             </StackLayout>
-                            <Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />
+                            <local:FavoriteSwitch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

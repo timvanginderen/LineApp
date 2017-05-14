@@ -7,6 +7,6 @@ namespace MijnLijn.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int ExternalId { get; set; }
+        public int Number { get; set; }
     }
 }

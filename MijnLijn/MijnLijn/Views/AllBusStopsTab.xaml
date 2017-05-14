@@ -4,19 +4,24 @@
              x:Class="MijnLijn.AllBusStopsTab"
              Title="All stops">
 
-    <ListView x:Name="listView" 
-			  ItemTapped="OnItemTapped"
-			  ItemsSource="{Binding .}" >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout >
-                        <Label Text="{Binding Name}" Font="15,Bold" />
-                        <Label Text="{Binding NumbersDisplay}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout>
 
+        <SearchBar x:Name="AllStopsSearchBar" TextChanged="AllStopsSearchBar_TextChanged"/>
+
+        <ListView x:Name="AllStopsListView" 
+			      ItemTapped="OnItemTapped"
+			      ItemsSource="{Binding .}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout >
+                            <Label Text="{Binding Name}" Font="15,Bold" />
+                            <Label Text="{Binding NumbersDisplay}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
 </ContentPage>

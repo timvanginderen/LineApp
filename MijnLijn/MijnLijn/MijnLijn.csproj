@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationState.cs" />
     <Compile Include="Utils\EncryptionUtil.cs" />
     <Compile Include="Utils\MijnLijnUtil.cs" />
     <Compile Include="Constants.cs" />

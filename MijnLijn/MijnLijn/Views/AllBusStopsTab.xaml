@@ -19,7 +19,7 @@
                                 <Label Text="{Binding Name}" Font="15,Bold" />
                                 <Label Text="{Binding NumbersDisplay}"/>
                             </StackLayout>
-                            <Switch Toggled="Switch_Toggled" HorizontalOptions="EndAndExpand" />
+                            <Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

@@ -11,12 +11,10 @@ namespace MijnLijn.Models
         public string ServerName { get; set; }
         public string Version { get; set; }
         public string Platform { get; set; }
-
     }
 
     public class Data
     {
         public List<Line> Lines { get; set; }
-
     }
 }

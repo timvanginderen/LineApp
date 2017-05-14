@@ -34,5 +34,22 @@ namespace MijnLijn.Models
             }
 
         }
+
+        public bool Favorited
+        {
+            get
+            {
+                int[] favorites = App.ApplicationState.FavoriteStopNumbers;
+                foreach (int myNumber in this.NumbersArray)
+                {
+                    foreach (int favoriteNumber in favorites)
+                    {
+                        if (myNumber == favoriteNumber)
+                            return true;
+                    }
+                }
+                return false;
+            }
+        }
     }
 }

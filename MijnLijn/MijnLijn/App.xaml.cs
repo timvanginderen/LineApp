@@ -8,6 +8,7 @@ namespace MijnLijn
     {
         private static MijnLijnDatabase database;
         public static LineManager LineManager { get; private set; }
+        public static ApplicationState ApplicationState { get; private set; }
 
         public App()
         {
@@ -15,6 +16,7 @@ namespace MijnLijn
 
             LineManager = new LineManager(new RestService());
             MainPage = new NavigationPage(new MainPage());
+            ApplicationState = new ApplicationState();
         }
 
         public static MijnLijnDatabase Database
@@ -32,6 +34,7 @@ namespace MijnLijn
         protected override void OnStart()
         {
             // Handle when your app starts
+            ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689};
         }
 
         protected override void OnSleep()

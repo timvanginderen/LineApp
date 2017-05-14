@@ -51,6 +51,8 @@ namespace MijnLijn.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
+                Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE"); //TODO get auth token for UWP maps api
+
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

@@ -138,6 +138,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>2.3.4.231</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>2.3.4.231</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MijnLijn\MijnLijn\MijnLijn.csproj">

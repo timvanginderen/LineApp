@@ -4,8 +4,22 @@
              x:Class="MijnLijn.NearbyTab"
              Title="Nearby">
     <StackLayout>
-        <Label Text="This is a Tabbed, you can tap on the Tabs to go to the other pages. You can specify an icon that will show up on iOS and Android with the Icon property of each page." Margin="5" />
-        <Label Text="Blue" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-        <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        <ListView x:Name="NearbysListView" 
+			      ItemTapped="OnItemTapped"
+			      ItemsSource="{Binding .}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" Font="15,Bold" />
+                                <!--<Label Text="{Binding NumbersDisplay}"/>-->
+                            </StackLayout>
+                            <!--<Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

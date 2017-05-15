@@ -13,7 +13,10 @@
                         <StackLayout Orientation="Horizontal">
                             <StackLayout Orientation="Vertical">
                                 <Label Text="{Binding Name}" Font="15,Bold" />
-                                <!--<Label Text="{Binding NumbersDisplay}"/>-->
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Number}"/>
+                                    <Label Text="{Binding DistanceFormatted}"/>
+                                </StackLayout>
                             </StackLayout>
                             <!--<Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />-->
                         </StackLayout>

@@ -24,7 +24,6 @@ namespace MijnLijn
         private async void GetLookups()
         {
             allLookups = await App.Database.GetHalteLookupsAsync();
-            List<BusStop> allStops = await App.Database.GetHaltesByDistanceAsync();
             this.BindingContext = allLookups;
         }
 
@@ -47,7 +46,6 @@ namespace MijnLijn
                 filteredLookups = allLookups.Where(lookup => lookup.Name.ToLower().Contains(query.ToLower())).ToList();
                 this.BindingContext = filteredLookups;
             }
-
         }
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)

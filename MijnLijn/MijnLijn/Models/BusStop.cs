@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 
 namespace MijnLijn.Models
 {
@@ -18,5 +19,19 @@ namespace MijnLijn.Models
         public double Longitude { get; set; }
         [Column("ZNUMBER")]
         public string Number { get; set; }
+        [Column("DISTANCE")]
+        public string Distance { get; set; }
+
+        public string DistanceFormatted
+        {
+            get
+            {
+                double dist;
+                Double.TryParse(this.Distance, out dist);
+
+                return string.Format("{0} meter", Math.Round(dist * 1000));
+            }
+            
+        }
     }
 }

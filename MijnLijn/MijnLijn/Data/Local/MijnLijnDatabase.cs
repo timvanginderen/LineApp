@@ -35,7 +35,14 @@ namespace MijnLijn
 
             return database.QueryAsync<BusStop>(sql);
         }
+        public Task<List<BusStop>> GetFavoriteHaltes(int[]stopNumbers)
+        {
+            string numbers = String.Join(",", stopNumbers);
+            string sql = String.Format("SELECT * FROM ZHALTE WHERE ZNUMBER IN ({0})", numbers);
 
+            return database.QueryAsync<BusStop>(sql);
+        }
+        //TODO move to util class
         public double ToRadians(double degrees)
         {
             return degrees * 0.0174532925199432958;

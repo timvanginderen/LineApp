@@ -17,6 +17,8 @@ namespace MijnLijn
             LineManager = new LineManager(new RestService());
             MainPage = new NavigationPage(new MainPage());
             ApplicationState = new ApplicationState();
+            //TODO replace hardcoded favorites
+            ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689, 305224 };
         }
 
         public static MijnLijnDatabase Database
@@ -34,8 +36,7 @@ namespace MijnLijn
         protected override void OnStart()
         {
             // Handle when your app starts
-            //TODO replace hardcoded favorites
-            ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689, 305224};
+            
         }
 
         protected override void OnSleep()

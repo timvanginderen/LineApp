@@ -7,8 +7,8 @@ namespace MijnLijn.Models
     {
         [PrimaryKey, AutoIncrement, Column("Z_PK")]
         public int Id { get; set; }
-        [Column("ZNAME")]
-        public string Name { get; set; }
+        //[Column("ZNAME")]
+        //public string Name { get; set; }
         [Column("ZEXTERNALID")]
         public string ExternalId { get; set; }
         [Column("ZSECTIONID")]

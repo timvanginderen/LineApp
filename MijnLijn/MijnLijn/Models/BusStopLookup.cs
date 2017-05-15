@@ -9,8 +9,8 @@ namespace MijnLijn.Models
     {
         [PrimaryKey, AutoIncrement, Column("Z_PK")]
         public int Id { get; set; }
-        [Column("ZNAME")]
-        public string Name { get; set; }
+        //[Column("ZNAME")]
+        //public string Name { get; set; }
         [Column("ZNUMBERS")]
         public string Numbers { get; set; }
         [Column("ZSECTIONID")]

@@ -1,7 +1,12 @@
-﻿namespace MijnLijn.Models
+﻿using SQLite;
+
+namespace MijnLijn.Models
 {
     public abstract class BaseStop
     {
+        [Column("ZNAME")]
+        public string Name { get; set; }
+
         abstract public int[] StopNumbers { get; set; }
 
         public bool Favorited

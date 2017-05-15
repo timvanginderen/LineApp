@@ -9,15 +9,15 @@ namespace MijnLijn.Views
     public partial class BusStopPage : ContentPage
     {
 
-        public BusStopPage(BusStopLookup lookup)
+        public BusStopPage(BaseStop stop)
         {
             InitializeComponent();
 
             // Use bus stop name as page title
-            this.Title = lookup.Name;
-            
+            this.Title = stop.Name;
+
             // Fetch lines for stops from server
-            int[] stopNumbers = lookup.NumbersArray;
+            int[] stopNumbers = stop.StopNumbers;
             GetLines(stopNumbers);
             
         }

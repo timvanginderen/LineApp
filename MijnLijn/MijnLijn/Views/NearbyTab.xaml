@@ -18,7 +18,7 @@
                                     <Label Text="{Binding DistanceFormatted}"/>
                                 </StackLayout>
                             </StackLayout>
-                            <!--<Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />-->
+                            <Switch Toggled="Switch_Toggled" IsToggled="{Binding Favorited}" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

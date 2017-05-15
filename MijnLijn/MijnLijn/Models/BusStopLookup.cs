@@ -5,7 +5,7 @@ using System.Linq;
 namespace MijnLijn.Models
 {
     [Table("ZHALTELOOKUP")]
-    public class BusStopLookup
+    public class BusStopLookup : BaseStop
     {
         [PrimaryKey, AutoIncrement, Column("Z_PK")]
         public int Id { get; set; }
@@ -35,21 +35,13 @@ namespace MijnLijn.Models
 
         }
 
-        public bool Favorited
+        public override int[] StopNumbers
         {
             get
             {
-                int[] favorites = App.ApplicationState.FavoriteStopNumbers;
-                foreach (int myNumber in this.NumbersArray)
-                {
-                    foreach (int favoriteNumber in favorites)
-                    {
-                        if (myNumber == favoriteNumber)
-                            return true;
-                    }
-                }
-                return false;
+                return this.NumbersArray;
             }
+            set {  }
         }
     }
 }

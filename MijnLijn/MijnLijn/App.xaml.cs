@@ -34,7 +34,8 @@ namespace MijnLijn
         protected override void OnStart()
         {
             // Handle when your app starts
-            ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689};
+            //TODO replace hardcoded favorites
+            ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689, 305224};
         }
 
         protected override void OnSleep()

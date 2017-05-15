@@ -33,5 +33,10 @@ namespace MijnLijn
         {
 
         }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+
+        }
     }
 }

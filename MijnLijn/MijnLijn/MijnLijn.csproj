@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationState.cs" />
+    <Compile Include="Models\BaseStop.cs" />
     <Compile Include="Utils\EncryptionUtil.cs" />
     <Compile Include="Utils\MijnLijnUtil.cs" />
     <Compile Include="Constants.cs" />

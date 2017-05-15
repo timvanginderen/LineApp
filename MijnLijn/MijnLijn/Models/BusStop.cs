@@ -3,7 +3,7 @@ using System;
 
 namespace MijnLijn.Models
 {
-    public class BusStop
+    public class BusStop : BaseStop
     {
         [PrimaryKey, AutoIncrement, Column("Z_PK")]
         public int Id { get; set; }
@@ -31,7 +31,18 @@ namespace MijnLijn.Models
 
                 return string.Format("{0} meter", Math.Round(dist * 1000));
             }
-            
+
+        }
+
+        public override int[] StopNumbers
+        {
+            get
+            {
+                int stopNumber;
+                Int32.TryParse(this.Number, out stopNumber);
+                return new int[1] { stopNumber };
+            }
+            set { }
         }
     }
 }

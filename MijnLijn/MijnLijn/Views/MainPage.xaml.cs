@@ -9,6 +9,7 @@ namespace MijnLijn.Views
         public MainPage()
         {
             InitializeComponent();
+            
         }
     }
 }

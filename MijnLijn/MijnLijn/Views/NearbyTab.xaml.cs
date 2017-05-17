@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MijnLijn.Models;
+using MijnLijn.Utils;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,9 +19,12 @@ namespace MijnLijn.Views
             GetNearby();
         }
 
+        // Get location from app state and get nearby stops from db
         private async void GetNearby()
         {
-            _nearbyStops = await App.Database.GetHaltesByDistanceAsync();
+            //var position = App.ApplicationState.CurrentLocation ?? PropertyHelper.GetLocationFromProperties();
+            var position = App.ApplicationState.CurrentLocation;
+            _nearbyStops = await App.Database.GetHaltesByDistanceAsync(position);
             this.BindingContext = _nearbyStops;
         }
 

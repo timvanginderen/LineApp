@@ -5,5 +5,8 @@
         public const string ApiUrl = "http://mijnlijn-uat.codingmammoth.com/api/1/realtime/";
         public const string ApiSignature = "android_ML_1.0";
         public const string ApiSecret = "9f6ff87686048d6801d5f6068b2d8d5b";
+        public const double DefaultLocationLat = 51.4488398;
+        public const double DefaultLocationLng = 4.4287307;
+
     }
 }

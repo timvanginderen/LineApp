@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Global\ApplicationState.cs" />
+    <Compile Include="Global\PropertyKeys.cs" />
     <Compile Include="Models\BaseStop.cs" />
     <Compile Include="Utils\EncryptionUtil.cs" />
     <Compile Include="Utils\MathUtil.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Models\BusStopLookup.cs" />
     <Compile Include="Models\Favorite.cs" />
     <Compile Include="Models\Line.cs" />
+    <Compile Include="Utils\PropertyHelper.cs" />
     <Compile Include="Views\BusStopPage.xaml.cs">
       <DependentUpon>BusStopPage.xaml</DependentUpon>
     </Compile>

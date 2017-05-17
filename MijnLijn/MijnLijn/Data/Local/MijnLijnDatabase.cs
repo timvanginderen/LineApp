@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MijnLijn.Models;
 using MijnLijn.Utils;
+using Plugin.Geolocator.Abstractions;
 using SQLite;
 
 namespace MijnLijn.Data.Local
@@ -24,11 +25,12 @@ namespace MijnLijn.Data.Local
             return _database.QueryAsync<BusStopLookup>(SelectAllLookups);
         }
 
-        public Task<List<BusStop>> GetHaltesByDistanceAsync()
+        public Task<List<BusStop>> GetHaltesByDistanceAsync(Position position)
         {
-            //TODO replace hardcoded location 
-            double lat = 50;
-            double lng = 4;
+
+            double lat = position.Latitude;
+            double lng = position.Longitude;
+
             double fudge = Math.Pow(Math.Cos(MathUtil.ToRadians(lat)), 2);
 
             string sql = $"SELECT *, ((ZLATITUDE-{lat})*(ZLATITUDE-{lat})) + " +

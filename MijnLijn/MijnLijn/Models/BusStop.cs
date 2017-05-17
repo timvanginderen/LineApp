@@ -7,8 +7,6 @@ namespace MijnLijn.Models
     {
         [PrimaryKey, AutoIncrement, Column("Z_PK")]
         public int Id { get; set; }
-        //[Column("ZNAME")]
-        //public string Name { get; set; }
         [Column("ZEXTERNALID")]
         public string ExternalId { get; set; }
         [Column("ZSECTIONID")]
@@ -26,10 +24,8 @@ namespace MijnLijn.Models
         {
             get
             {
-                double dist;
-                Double.TryParse(this.Distance, out dist);
-
-                return string.Format("{0} meter", Math.Round(dist * 1000));
+                double.TryParse(Distance, out double dist);
+                return $"{Math.Round(dist * 1000)} meter";
             }
 
         }
@@ -38,9 +34,8 @@ namespace MijnLijn.Models
         {
             get
             {
-                int stopNumber;
-                Int32.TryParse(this.Number, out stopNumber);
-                return new int[1] { stopNumber };
+                int.TryParse(Number, out int stopNumber);
+                return new [] { stopNumber };
             }
             set { }
         }

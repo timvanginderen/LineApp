@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using MijnLijn.Global;
+using SQLite;
 
 namespace MijnLijn.Models
 {
@@ -7,13 +8,13 @@ namespace MijnLijn.Models
         [Column("ZNAME")]
         public string Name { get; set; }
 
-        abstract public int[] StopNumbers { get; set; }
+        public abstract int[] StopNumbers { get; set; }
 
         public bool Favorited
         {
             get
             {
-                int[] favorites = App.ApplicationState.FavoriteStopNumbers;
+                int[] favorites = ApplicationState.FavoriteStopNumbers;
                 foreach (int myNumber in this.StopNumbers)
                 {
                     foreach (int favoriteNumber in favorites)

@@ -1,12 +1,13 @@
-﻿
+﻿using MijnLijn.Data.Local;
 using MijnLijn.Data.Remote;
+using MijnLijn.Global;
 using Xamarin.Forms;
 
 namespace MijnLijn
 {
     public partial class App : Application
     {
-        private static MijnLijnDatabase database;
+        private static MijnLijnDatabase _database;
         public static LineManager LineManager { get; private set; }
         public static ApplicationState ApplicationState { get; private set; }
 
@@ -15,7 +16,7 @@ namespace MijnLijn
             InitializeComponent();
 
             LineManager = new LineManager(new RestService());
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Views.MainPage());
             ApplicationState = new ApplicationState();
             //TODO replace hardcoded favorites
             ApplicationState.FavoriteStopNumbers = new int[] { 105693, 105689, 305224 };
@@ -25,11 +26,11 @@ namespace MijnLijn
         {
             get
             {
-                if (database == null)
+                if (_database == null)
                 {
-                    database = new MijnLijnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("MijnLijn.db3"));
+                    _database = new MijnLijnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("MijnLijn.db3"));
                 }
-                return database;
+                return _database;
             }
         }
 

@@ -5,15 +5,15 @@ namespace MijnLijn.Data.Remote
 {
     public class LineManager
     {
-        IRestService service;
+        readonly IRestService _service;
 
         public LineManager(IRestService service)
         {
-            this.service = service;
+            this._service = service;
         }
         public Task<ApiResponse> GetLines(int[] stopNumbers)
         {
-            return service.PostToGetLines(stopNumbers);
+            return _service.PostToGetLines(stopNumbers);
         }
     }
 }

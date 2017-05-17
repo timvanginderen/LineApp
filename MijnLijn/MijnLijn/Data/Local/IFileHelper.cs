@@ -1,4 +1,4 @@
-﻿namespace MijnLijn
+﻿namespace MijnLijn.Data.Local
 {
     public interface IFileHelper
     {

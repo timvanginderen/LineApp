@@ -1,4 +1,4 @@
-﻿namespace MijnLijn
+﻿namespace MijnLijn.Utils
 {
     public static class MijnLijnUtil
     {

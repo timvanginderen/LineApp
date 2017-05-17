@@ -1,5 +1,5 @@
-﻿using PCLCrypto;
-using System.Diagnostics;
+﻿using MijnLijn.Global;
+using PCLCrypto;
 using System.Linq;
 using System.Text;
 
@@ -7,24 +7,22 @@ namespace MijnLijn.Utils
 {
     public static class EncryptionUtil
     {
-        private const string FIELD_VALUE_SIGNATURE_PREFIX = "android_ML_";
-        private const string FIELD_VALUE_SIGNATURE_VERSION_NAME = "1.0";
-      
+        private const string FieldValueSignaturePrefix = "android_ML_";
+        private const string FieldValueSignatureVersionName = "1.0";  
 
-        public static string CreateSignature()
-        {
-            return FIELD_VALUE_SIGNATURE_PREFIX + FIELD_VALUE_SIGNATURE_VERSION_NAME;
-        }
-
+        // Create api token: a SHA1 hash of api secret, the bodystring and app signature         
         public static string CreateToken(string bodyString)
         {
             string secret = Constants.ApiSecret;
             string signature = CreateSignature();
-            string token = string.Format("{0}:{1}:{2}", secret, bodyString, signature);
-            Debug.WriteLine("MijnLijn D: token = " + token);
+            string token = $"{secret}:{bodyString}:{signature}";
             string hashedToken = CalculateSha1Hash(token).ToUpper();
-            Debug.WriteLine("MijnLijn D: hashed token = " + hashedToken);
             return hashedToken;
+        }
+
+        private static string CreateSignature()
+        {
+            return FieldValueSignaturePrefix + FieldValueSignatureVersionName;
         }
 
         private static string CalculateSha1Hash(string input)

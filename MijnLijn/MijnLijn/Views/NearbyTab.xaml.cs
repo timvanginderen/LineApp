@@ -1,17 +1,15 @@
-﻿using MijnLijn.Models;
-using MijnLijn.Views;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using MijnLijn.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MijnLijn
+namespace MijnLijn.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NearbyTab : ContentPage
     {
 
-        private List<BusStop> nearbyStops;
+        private List<BusStop> _nearbyStops;
 
         public NearbyTab()
         {
@@ -22,18 +20,20 @@ namespace MijnLijn
 
         private async void GetNearby()
         {
-            nearbyStops = await App.Database.GetHaltesByDistanceAsync();
-            this.BindingContext = nearbyStops;
+            _nearbyStops = await App.Database.GetHaltesByDistanceAsync();
+            this.BindingContext = _nearbyStops;
         }
 
         private void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e == null) return; // has been set to null, do not 'process' tapped event
+            // has been set to null, do not 'process' tapped event
+            if (e == null) return; 
 
             BusStop lookup = (BusStop)e.Item;
             Navigation.PushAsync(new BusStopPage(lookup));
 
-            ((ListView)sender).SelectedItem = null; // de-select the row
+            // de-select the row
+            ((ListView)sender).SelectedItem = null; 
         }
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)

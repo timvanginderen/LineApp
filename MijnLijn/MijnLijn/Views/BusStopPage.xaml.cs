@@ -8,7 +8,6 @@ namespace MijnLijn.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusStopPage : ContentPage
     {
-
         public BusStopPage(BaseStop stop)
         {
             InitializeComponent();
@@ -22,7 +21,7 @@ namespace MijnLijn.Views
             
         }
 
-        async void GetLines(int[] stopNumbers)
+        private async void GetLines(int[] stopNumbers)
         {
             ApiResponse apiResponse = await App.LineManager.GetLines(stopNumbers);
 
@@ -32,13 +31,12 @@ namespace MijnLijn.Views
             }
             else
             {
-                DisplayAlert("Info", "Deze halte bestaat niet meer", "Cancel");
+                await DisplayAlert("Info", "Deze halte bestaat niet meer", "Cancel");
             }
         }
 
         private void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-
         }
     }
 }

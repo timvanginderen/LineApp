@@ -38,26 +38,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationState.cs" />
+    <Compile Include="Global\ApplicationState.cs" />
     <Compile Include="Models\BaseStop.cs" />
     <Compile Include="Utils\EncryptionUtil.cs" />
+    <Compile Include="Utils\MathUtil.cs" />
     <Compile Include="Utils\MijnLijnUtil.cs" />
-    <Compile Include="Constants.cs" />
+    <Compile Include="Global\Constants.cs" />
     <Compile Include="Data\Remote\IRestService.cs" />
     <Compile Include="Data\Remote\LineManager.cs" />
     <Compile Include="Data\Remote\RestService.cs" />
-    <Compile Include="Data\Remote\ApiResponse.cs" />
+    <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\BusStop.cs" />
     <Compile Include="Models\BusStopLookup.cs" />
     <Compile Include="Models\Favorite.cs" />
-    <Compile Include="Data\Remote\Line.cs" />
+    <Compile Include="Models\Line.cs" />
     <Compile Include="Views\BusStopPage.xaml.cs">
       <DependentUpon>BusStopPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GreetingPage.xaml.cs">
-      <DependentUpon>GreetingPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IFileHelper.cs" />
+    <Compile Include="Data\Local\IFileHelper.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -77,10 +75,6 @@
     <Compile Include="Data\Local\MijnLijnDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\GreetingPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

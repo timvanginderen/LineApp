@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MijnLijn.NearbyTab"
+             x:Class="MijnLijn.Views.NearbyTab"
              Title="Nearby">
     <StackLayout>
         <ListView x:Name="NearbysListView" 

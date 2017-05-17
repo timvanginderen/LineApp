@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Windows.Storage;
+using MijnLijn.Data.Local;
 
 namespace MijnLijn.UWP
 {
@@ -29,11 +30,6 @@ namespace MijnLijn.UWP
                 file = await Importedfile.CopyAsync(Windows.Storage.ApplicationData.Current.LocalFolder);
             }
             string path = file.Path;
-
-            //using (SQLite.Net.SQLiteConnection conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path))
-            //{
-            //    conn.CreateTable<User>();
-            //}
         }
     }
 }

@@ -6,24 +6,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MijnLijn.Global;
 
 namespace MijnLijn.Data.Remote
 {
     public class RestService : IRestService
     {
-        private const string FIELD_KEY_STOP_ID = "stopID";
-        private const string FIELD_KEY_OS = "os";
-        private const string FIELD_VALUE_OS = "android";
+        private const string FieldKeyStopId = "stopID";
+        private const string FieldKeyOs = "os";
+        private const string FieldValueOs = "android";
 
-        HttpClient client;
-
-        public List<Line> Lines { get; private set; }
+        readonly HttpClient _client;
 
         public RestService()
         {
-            client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            client.DefaultRequestHeaders.Add("x-signature", Constants.ApiSignature);
+            _client = new HttpClient { MaxResponseContentBufferSize = 256000 };
+            _client.DefaultRequestHeaders.Add("x-signature", Constants.ApiSignature);
         }
 
         public async Task<ApiResponse> PostToGetLines(int[] stopNumbers)
@@ -31,7 +29,7 @@ namespace MijnLijn.Data.Remote
             AddRequestToken(stopNumbers);
 
             var uri = new Uri(string.Format(Constants.ApiUrl));
-            ApiResponse apiResponse = new ApiResponse();
+            var apiResponse = new ApiResponse();
 
             try
             {
@@ -44,11 +42,11 @@ namespace MijnLijn.Data.Remote
 
                 HttpContent content = new FormUrlEncodedContent(keyValues);
 
-                var response = await client.PostAsync(uri, content);
+                var response = await _client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine(@"				Success, content: " + responseContent.ToString());
+                    Debug.WriteLine(@"				Success, content: " + responseContent);
                     apiResponse = JsonConvert.DeserializeObject<ApiResponse>(responseContent);
                 }
             }
@@ -65,8 +63,8 @@ namespace MijnLijn.Data.Remote
             string bodyString = CreateBodyString(stopNumbers);
             string token = EncryptionUtil.CreateToken(bodyString);
 
-            client.DefaultRequestHeaders.Remove("x-token");
-            client.DefaultRequestHeaders.Add("x-token", token);
+            _client.DefaultRequestHeaders.Remove("x-token");
+            _client.DefaultRequestHeaders.Add("x-token", token);
         }
 
         private string CreateBodyString(int[] stopNrs)
@@ -74,9 +72,9 @@ namespace MijnLijn.Data.Remote
             string bodyString = "";
             foreach(int nr in stopNrs)
             {
-                bodyString += string.Format("{0}={1}&", FIELD_KEY_STOP_ID, nr);
+                bodyString += $"{FieldKeyStopId}={nr}&";
             }
-            bodyString += string.Format("{0}={1}", FIELD_KEY_OS, FIELD_VALUE_OS);
+            bodyString += $"{FieldKeyOs}={FieldValueOs}";
             return bodyString;
         }
     }

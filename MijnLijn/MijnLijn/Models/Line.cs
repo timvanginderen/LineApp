@@ -8,17 +8,20 @@ namespace MijnLijn.Models
         public string InternLineNumber { get; set; }
         public string Destination { get; set; }
         public int NormalTime { get; set; }
+        // ReSharper disable once InconsistentNaming
         public DateTime NormalTimeISO { get; set; }
         public int RealTime { get; set; }
+        // ReSharper disable once InconsistentNaming
         public DateTime RealTimeISO { get; set; }
         public string Delay { get; set; }
         public Color BackgroundColor { get; set; }
         public Color TextColor { get; set; }
+
         public string BackgroundColorHex
         {
             get
             {
-                Xamarin.Forms.Color myColor = ToXamarinColor(this.BackgroundColor);
+                var myColor = ToXamarinColor(this.BackgroundColor);
                 return ToHex(myColor);
             }
         }
@@ -26,7 +29,7 @@ namespace MijnLijn.Models
         {
             get
             {
-                Xamarin.Forms.Color myColor = ToXamarinColor(this.TextColor);
+                var myColor = ToXamarinColor(this.TextColor);
                 return ToHex(myColor);
             }
         }
@@ -47,12 +50,12 @@ namespace MijnLijn.Models
                 }
             }
         }
-        private Xamarin.Forms.Color ToXamarinColor(Color color)
+        private static Xamarin.Forms.Color ToXamarinColor(Color color)
         {
             return Xamarin.Forms.Color.FromRgb(color.Red, color.Green, color.Blue);
         }
 
-        private string ToHex(Xamarin.Forms.Color color)
+        private static string ToHex(Xamarin.Forms.Color color)
         {
             var red = (int)(color.R * 255);
             var green = (int)(color.G * 255);
